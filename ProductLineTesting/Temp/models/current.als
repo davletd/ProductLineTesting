@@ -665,5 +665,5 @@ pred Tuple417 { some c: Configuration |#c.f14= 1 and #c.f15= 1  }
 pred Tuple419 { some c: Configuration |#c.f14= 0 and #c.f15= 1  } 
 
 
-pred ConjunctionTuple3{Tuple161 and Tuple118 and Tuple313 and Tuple409 and Tuple285 and Tuple341 and Tuple361 and Tuple246 and Tuple2 and Tuple22 }
+pred ConjunctionTuple3{Tuple125 and Tuple120 and Tuple227 and Tuple327 and Tuple319 and Tuple359 and Tuple358 and Tuple204 }
  run ConjunctionTuple3 for 5

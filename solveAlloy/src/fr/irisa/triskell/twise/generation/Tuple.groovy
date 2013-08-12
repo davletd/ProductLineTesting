@@ -61,10 +61,18 @@ public class Tuple {
 		return "Tuple${number}"
 	}
 
-	def toPredicate() {
-		def predicate = "pred ${getName()} { some c: Configuration |"
-		tupleFeatures.each { it -> predicate += it + " and " }	
-		return predicate.substring(0,predicate.length()-4) + " } \n";		
+	public String toPredicate() 
+	{
+		String predicate = new String();
+		predicate = "pred "+ this.getName() + " { some c: Configuration |";
+		for(int i=0;i<this.tupleFeatures.size();i++)
+		{
+			predicate = predicate + this.tupleFeatures.get(i).toString() +" and ";
+		}	
+
+		predicate = predicate.substring(0,predicate.length()-4);
+		predicate = predicate + " } \n";
+		return predicate;
 	}
 
 	public String getAlloyBaseModel(String alloyFile) 
@@ -226,14 +234,21 @@ public class Tuple {
 		return this.isValid;
 	}
 
-	Boolean hasDuplicates() {
-		for(i in 0..tupleFeatures.size()) {
-			for(j in 0..tupleFeatures.size()) {
-				if( i != j && (tupleFeatures.get(i).number == tupleFeatures.get(j).number)) {
-					return true
+	
+	public Boolean hasDuplicates()
+	{
+		Boolean dups=new Boolean(false);
+		for(int i=0;i<this.tupleFeatures.size();i++)
+		{
+			for(int j=0;j<this.tupleFeatures.size();j++)
+			{
+				if(i!=j && (this.tupleFeatures.get(i).number == this.tupleFeatures.get(j).number))
+				{
+					dups = true;
 				}
 			}
 		}
-		return false
+
+		return dups;
 	}
 }

@@ -63,26 +63,34 @@ class ConfigurationGenerator {
 		initial_.getVaildTuples(root,filename,tempFileName, minScopeDetect, maxScopeDetect, maxDurationDetect)
 	}
 
-	def isIncremental() 
+	public boolean isIncremental() 
 	{
-		isIncremental_
+		return isIncremental_;
 	}
 
-	def showTupleSet(ArrayList<Tuple> input) {
+	public String showTupleSet(ArrayList<Tuple> input)
+	{
 		def tupleString = ""
-		input.each { it -> tupleString += "Tuple${it.number}," }
-		return "{" +tupleString.substring(0,tupleString.length()-1)+"}"		
+
+		for(i in 0 .. input.size()) {
+			tupleString += "Tuple"+input.get(i).number +","
+		}
+
+		tupleString="{" +tupleString.substring(0,tupleString.length()-1)+"}"
+		
+		return tupleString
 	}
 	
 	public static boolean deleteDir(File dir) 
 	{
 		if (dir.isDirectory()) {
-			for (child in dir.list())
-			{
-				def file = new File(dir, child)
-				if(!file.delete())
-					return false				
-			}		
+			String[] children = dir.list();
+			for (i in 0..children.length) {
+				def file = new File(dir, children[i]);
+				if (!file.delete()) {
+					return false;
+				}
+			}
 		}
 		// The directory is now empty so delete it
 		return true;
@@ -91,7 +99,7 @@ class ConfigurationGenerator {
 
 	public void cleanUpSolutions(String solutionPath)
 	{
-		def dir = new File(solutionPath)
+		def dir = new File(solutionPath);
 
 		if(deleteDir(dir))
 			println "Clean up of solution directory successful..."
@@ -334,9 +342,6 @@ class ConfigurationGenerator {
 		System.out.println("\n Test sets are:");
 
 		PoolString="{";
-		
-		pool_.each {it -> println it.String toString() }
-		
 		for(int i=0;i<pool_.size();i++)
 		{
 			System.out.println(this.showTupleSet(pool_.get(i).tuples));
