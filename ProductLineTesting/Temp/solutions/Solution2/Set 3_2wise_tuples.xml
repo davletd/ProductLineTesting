@@ -1,0 +1,296 @@
+<alloy builddate="2008/10/27 23:45 EDT">
+
+<instance bitwidth="4" maxseq="5" command="Run ConjunctionTuple3 for 5" filename="">
+
+<sig label="univ" ID="0" builtin="yes">
+   <atom label="ProductConfigurations"/>
+   <atom label="Configuration$0"/>
+   <atom label="Configuration$1"/>
+   <atom label="Configuration$2"/>
+   <atom label="SMS$0"/>
+   <atom label="MMS$0"/>
+   <atom label="MMS$1"/>
+   <atom label="VoiceCall$0"/>
+   <atom label="WLAN$0"/>
+   <atom label="Bluetooth$0"/>
+   <atom label="UMTS$0"/>
+   <atom label="UMTS$1"/>
+   <atom label="UMTS$2"/>
+   <atom label="MP3$0"/>
+   <atom label="ThreeMP$0"/>
+   <atom label="ThreeMP$1"/>
+   <atom label="EightMP$0"/>
+   <atom label="BasicFunctions$0"/>
+   <atom label="Message$0"/>
+   <atom label="Communication$0"/>
+   <atom label="Extras$0"/>
+   <atom label="Camera$0"/>
+   <atom label="CellPhone$0"/>
+   <atom label="-8"/>
+   <atom label="-7"/>
+   <atom label="-6"/>
+   <atom label="-5"/>
+   <atom label="-4"/>
+   <atom label="-3"/>
+   <atom label="-2"/>
+   <atom label="-1"/>
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+   <atom label="7"/>
+</sig>
+
+<sig label="Int" ID="1" parentID="0" builtin="yes">
+   <atom label="-8"/>
+   <atom label="-7"/>
+   <atom label="-6"/>
+   <atom label="-5"/>
+   <atom label="-4"/>
+   <atom label="-3"/>
+   <atom label="-2"/>
+   <atom label="-1"/>
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+   <atom label="7"/>
+</sig>
+
+<sig label="seq/Int" ID="2" parentID="1" builtin="yes">
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+</sig>
+
+<sig label="ProductConfigurations" ID="3" parentID="0" one="yes">
+   <atom label="ProductConfigurations"/>
+</sig>
+
+<field label="configurations" ID="4" parentID="3">
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$0"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$1"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="3"/> <type ID="5"/> </types>
+</field>
+
+<sig label="Configuration" ID="5" parentID="0">
+   <atom label="Configuration$0"/>
+   <atom label="Configuration$1"/>
+   <atom label="Configuration$2"/>
+</sig>
+
+<field label="f1" ID="6" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="SMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="SMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="SMS$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="7"/> </types>
+</field>
+
+<field label="f2" ID="8" parentID="5">
+   <types> <type ID="5"/> <type ID="9"/> </types>
+</field>
+
+<field label="f3" ID="10" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="VoiceCall$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="VoiceCall$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="VoiceCall$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="11"/> </types>
+</field>
+
+<field label="f4" ID="12" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="WLAN$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="13"/> </types>
+</field>
+
+<field label="f5" ID="14" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Bluetooth$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="15"/> </types>
+</field>
+
+<field label="f6" ID="16" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="UMTS$2"/> </tuple>
+   <types> <type ID="5"/> <type ID="17"/> </types>
+</field>
+
+<field label="f7" ID="18" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="MP3$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="MP3$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="19"/> </types>
+</field>
+
+<field label="f8" ID="20" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="ThreeMP$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="21"/> </types>
+</field>
+
+<field label="f9" ID="22" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="EightMP$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="EightMP$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="23"/> </types>
+</field>
+
+<field label="f10" ID="24" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="BasicFunctions$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="BasicFunctions$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="BasicFunctions$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="25"/> </types>
+</field>
+
+<field label="f11" ID="26" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Message$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Message$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Message$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="27"/> </types>
+</field>
+
+<field label="f12" ID="28" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Communication$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Communication$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="29"/> </types>
+</field>
+
+<field label="f13" ID="30" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Extras$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Extras$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Extras$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="31"/> </types>
+</field>
+
+<field label="f14" ID="32" parentID="5">
+   <tuple> <atom label="Configuration$2"/> <atom label="Camera$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="33"/> </types>
+</field>
+
+<field label="f15" ID="34" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="CellPhone$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="CellPhone$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="CellPhone$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="35"/> </types>
+</field>
+
+<sig label="SMS" ID="7" parentID="0">
+   <atom label="SMS$0"/>
+</sig>
+
+<sig label="MMS" ID="9" parentID="0">
+   <atom label="MMS$0"/>
+   <atom label="MMS$1"/>
+</sig>
+
+<sig label="VoiceCall" ID="11" parentID="0">
+   <atom label="VoiceCall$0"/>
+</sig>
+
+<sig label="WLAN" ID="13" parentID="0">
+   <atom label="WLAN$0"/>
+</sig>
+
+<sig label="Bluetooth" ID="15" parentID="0">
+   <atom label="Bluetooth$0"/>
+</sig>
+
+<sig label="UMTS" ID="17" parentID="0">
+   <atom label="UMTS$0"/>
+   <atom label="UMTS$1"/>
+   <atom label="UMTS$2"/>
+</sig>
+
+<sig label="MP3" ID="19" parentID="0">
+   <atom label="MP3$0"/>
+</sig>
+
+<sig label="ThreeMP" ID="21" parentID="0">
+   <atom label="ThreeMP$0"/>
+   <atom label="ThreeMP$1"/>
+</sig>
+
+<sig label="EightMP" ID="23" parentID="0">
+   <atom label="EightMP$0"/>
+</sig>
+
+<sig label="BasicFunctions" ID="25" parentID="0">
+   <atom label="BasicFunctions$0"/>
+</sig>
+
+<sig label="Message" ID="27" parentID="0">
+   <atom label="Message$0"/>
+</sig>
+
+<sig label="Communication" ID="29" parentID="0">
+   <atom label="Communication$0"/>
+</sig>
+
+<sig label="Extras" ID="31" parentID="0">
+   <atom label="Extras$0"/>
+</sig>
+
+<sig label="Camera" ID="33" parentID="0">
+   <atom label="Camera$0"/>
+</sig>
+
+<sig label="CellPhone" ID="35" parentID="0">
+   <atom label="CellPhone$0"/>
+</sig>
+
+<skolem label="$Tuple161_c" ID="36">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple118_c" ID="37">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple313_c" ID="38">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple409_c" ID="39">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple285_c" ID="40">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple341_c" ID="41">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple361_c" ID="42">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple246_c" ID="43">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2_c" ID="44">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple22_c" ID="45">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+</instance>
+
+</alloy>

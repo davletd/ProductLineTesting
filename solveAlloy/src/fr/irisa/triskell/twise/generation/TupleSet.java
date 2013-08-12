@@ -133,7 +133,7 @@ public class TupleSet
 
 			tempTuple.setTuple(tempListOfFeatures);
 			//Add only if there are no duplicates
-			if(!tempTuple.hasDups())
+			if(!tempTuple.hasDuplicates())
 			{
 				tempTupleSet.add(tempTuple);
 				tupleNumber = tupleNumber+1;

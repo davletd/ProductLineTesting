@@ -27,76 +27,56 @@ import edu.mit.csail.sdg.alloy4compiler.translator.TranslateAlloyToKodkod;
  */
 public class Tuple {
 
-	public ArrayList<Feature> tupleFeatures;
-	public Integer number;
-	public Boolean isValid;
+	public ArrayList<Feature> tupleFeatures
+	public Integer number
+	public Boolean isValid
 
+	public Tuple()
+	{}
+	
 	public Tuple(Integer n, Integer tupleSize)
 	{
-		this.number = n;
-		this.tupleFeatures=new ArrayList<Feature>();
-		for(int i=1;i<=tupleSize;i++)
-		{
-			Feature tempFeature = new Feature(i);
-			this.tupleFeatures.add(tempFeature);
-		}
-
+		number = n
+		tupleFeatures = new ArrayList<Feature>()
+		for(i in 1..tupleSize)
+			tupleFeatures.add(new Feature(i))
 	}
-	public Tuple()
-	{
-
+	
+	def setNumber(Integer n) {
+		number = n
 	}
 
-	public void setNumber(Integer n)
-	{
-		this.number=n;
-	}
-
-
-	public void setTuple(ArrayList<Feature> features)
-	{
-		this.tupleFeatures =  features;
+	def setTuple(ArrayList<Feature> features) {
+		tupleFeatures =  features
 	}
 
 	public String toString() 
 	{
-		String tuple ="[";
-		for(int i=0;i<this.tupleFeatures.size();i++)
-		{
-			tuple=tuple + this.tupleFeatures.get(i).toString() +",";
-		}
-		tuple = tuple.substring(0,tuple.length()-1)  + "]";
-		return tuple;
+		def tuple = "["
+		tupleFeatures.each { it -> tuple += it + "," }
+		return tuple.substring(0,tuple.length()-1)  + "]"
 	}
 
-	public String getName()
+	def getName() {
+		return "Tuple${number}"
+	}
+
+	def toPredicate() {
+		def predicate = "pred ${getName()} { some c: Configuration |"
+		tupleFeatures.each { it -> predicate += it + " and " }	
+		return predicate.substring(0,predicate.length()-4) + " } \n";		
+	}
+
+	public String getAlloyBaseModel(String alloyFile) 
 	{
-		return "Tuple"+this.number;
-	}
-
-	public String toPredicate() 
-	{
-		String predicate = new String();
-		predicate = "pred "+ this.getName() + " { some c: Configuration |";
-		for(int i=0;i<this.tupleFeatures.size();i++)
-		{
-			predicate = predicate + this.tupleFeatures.get(i).toString() +" and ";
-		}	
-
-		predicate = predicate.substring(0,predicate.length()-4);
-		predicate = predicate + " } \n";
-		return predicate;
-	}
-
-	public String getAlloyBaseModel(String alloyFile) {
 		//...checks on aFile are elided
-		File aFile = new File(alloyFile);
-		StringBuilder contents = new StringBuilder();
+		def aFile = new File(alloyFile);
+		def contents = new StringBuilder();
 
 		try {
 			//use buffering, reading one line at a time
 			//FileReader always assumes default encoding is OK!
-			BufferedReader input =  new BufferedReader(new FileReader(aFile));
+			def input =  new BufferedReader(new FileReader(aFile));
 			try {
 				String line = null; //not declared within while loop
 				/*
@@ -117,55 +97,41 @@ public class Tuple {
 		catch (IOException ex){
 			ex.printStackTrace();
 		}
-		return contents.toString();
-
+		return contents.toString()
 	}
 
-	public String getCommand(Integer scope)
-	{
-		String command;
-		command = "run " + this.getName()  +" for "+ scope;
-		return command;
+	def getCommand(Integer scope) {
+		"run ${getName()} for ${scope}"
 	}
 
 	public void deleteTemp(String fileName) 
 	{
-
-		// A File object to represent the filename
-		File f = new File(fileName);
+		def f = new File(fileName);
 
 		// Make sure the file or directory exists and isn't write protected
 		if (!f.exists())
 			throw new IllegalArgumentException("Delete: no such file or directory: " + fileName);
 
 		if (!f.canWrite())
-			throw new IllegalArgumentException("Delete: write protected: "
-					+ fileName);
+			throw new IllegalArgumentException("Delete: write protected: " + fileName);
 
 		// If it is a directory, make sure it is empty
 		if (f.isDirectory()) {
 			String[] files = f.list();
 			if (files.length > 0)
-				throw new IllegalArgumentException(
-						"Delete: directory not empty: " + fileName);
+				throw new IllegalArgumentException("Delete: directory not empty: " + fileName);
 		}
 
 		// Attempt to delete it
-		boolean success = f.delete();
-
-		if (!success)
+		if (!f.delete())
 			throw new IllegalArgumentException("Delete: deletion failed");
-
 	}
 
-	public Boolean getValidity(String root,String baseAlloyName, String tempFileName, Integer min_Scope, Integer max_Scope, Integer max_Duration) throws Err, IOException
+	public Boolean getValidity(String root,String baseAlloyName, String tempFileName, Integer min_Scope, Integer maxScope, Integer max_Duration) throws Err, IOException
 	{
-		Integer maxScope=max_Scope;
-
 		Integer scope;
 		String tupleAlloyString;
-		//Initialize isValid
-		this.isValid=false;
+		isValid=false
 		long maxDuration = max_Duration;
 		// Alloy4 sends diagnostic messages and progress reports to the A4Reporter.
 		// By default, the A4Reporter ignores all these events (but you can extend the A4Reporter to display the event for the user)
@@ -209,7 +175,7 @@ public class Tuple {
 
 			// Choose some default options for how you want to execute the commands
 			A4Options options = new A4Options();
-			options.solver = A4Options.SatSolver.MiniSatJNI;
+			options.solver = A4Options.SatSolver.SAT4J;
 			
 			Integer modelCopy=new Integer(0);
 
@@ -260,20 +226,14 @@ public class Tuple {
 		return this.isValid;
 	}
 
-	public Boolean hasDups()
-	{
-		Boolean dups=new Boolean(false);
-		for(int i=0;i<this.tupleFeatures.size();i++)
-		{
-			for(int j=0;j<this.tupleFeatures.size();j++)
-			{
-				if(i!=j && (this.tupleFeatures.get(i).number == this.tupleFeatures.get(j).number)) 
-				{
-					dups = true;
+	Boolean hasDuplicates() {
+		for(i in 0..tupleFeatures.size()) {
+			for(j in 0..tupleFeatures.size()) {
+				if( i != j && (tupleFeatures.get(i).number == tupleFeatures.get(j).number)) {
+					return true
 				}
 			}
 		}
-
-		return dups;
+		return false
 	}
 }

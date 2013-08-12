@@ -1,0 +1,989 @@
+<alloy builddate="2008/10/27 23:45 EDT">
+
+<instance bitwidth="4" maxseq="5" command="Run ConjunctionTuple1 for 5" filename="">
+
+<sig label="univ" ID="0" builtin="yes">
+   <atom label="ProductConfigurations"/>
+   <atom label="Configuration$0"/>
+   <atom label="Configuration$1"/>
+   <atom label="Configuration$2"/>
+   <atom label="Configuration$3"/>
+   <atom label="Configuration$4"/>
+   <atom label="SMS$0"/>
+   <atom label="MMS$0"/>
+   <atom label="VoiceCall$0"/>
+   <atom label="WLAN$0"/>
+   <atom label="Bluetooth$0"/>
+   <atom label="Bluetooth$1"/>
+   <atom label="UMTS$0"/>
+   <atom label="MP3$0"/>
+   <atom label="MP3$1"/>
+   <atom label="MP3$2"/>
+   <atom label="ThreeMP$0"/>
+   <atom label="EightMP$0"/>
+   <atom label="EightMP$1"/>
+   <atom label="BasicFunctions$0"/>
+   <atom label="Message$0"/>
+   <atom label="Message$1"/>
+   <atom label="Communication$0"/>
+   <atom label="Communication$1"/>
+   <atom label="Extras$0"/>
+   <atom label="Camera$0"/>
+   <atom label="CellPhone$0"/>
+   <atom label="CellPhone$1"/>
+   <atom label="-8"/>
+   <atom label="-7"/>
+   <atom label="-6"/>
+   <atom label="-5"/>
+   <atom label="-4"/>
+   <atom label="-3"/>
+   <atom label="-2"/>
+   <atom label="-1"/>
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+   <atom label="7"/>
+</sig>
+
+<sig label="Int" ID="1" parentID="0" builtin="yes">
+   <atom label="-8"/>
+   <atom label="-7"/>
+   <atom label="-6"/>
+   <atom label="-5"/>
+   <atom label="-4"/>
+   <atom label="-3"/>
+   <atom label="-2"/>
+   <atom label="-1"/>
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+   <atom label="7"/>
+</sig>
+
+<sig label="seq/Int" ID="2" parentID="1" builtin="yes">
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+</sig>
+
+<sig label="ProductConfigurations" ID="3" parentID="0" one="yes">
+   <atom label="ProductConfigurations"/>
+</sig>
+
+<field label="configurations" ID="4" parentID="3">
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$0"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$1"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$2"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$3"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="3"/> <type ID="5"/> </types>
+</field>
+
+<sig label="Configuration" ID="5" parentID="0">
+   <atom label="Configuration$0"/>
+   <atom label="Configuration$1"/>
+   <atom label="Configuration$2"/>
+   <atom label="Configuration$3"/>
+   <atom label="Configuration$4"/>
+</sig>
+
+<field label="f1" ID="6" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="SMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="SMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="SMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="SMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="SMS$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="7"/> </types>
+</field>
+
+<field label="f2" ID="8" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="MMS$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="MMS$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="9"/> </types>
+</field>
+
+<field label="f3" ID="10" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="VoiceCall$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="VoiceCall$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="VoiceCall$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="VoiceCall$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="VoiceCall$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="11"/> </types>
+</field>
+
+<field label="f4" ID="12" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="WLAN$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="WLAN$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="13"/> </types>
+</field>
+
+<field label="f5" ID="14" parentID="5">
+   <tuple> <atom label="Configuration$2"/> <atom label="Bluetooth$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Bluetooth$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="15"/> </types>
+</field>
+
+<field label="f6" ID="16" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="UMTS$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="UMTS$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="17"/> </types>
+</field>
+
+<field label="f7" ID="18" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="MP3$2"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="MP3$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="MP3$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="19"/> </types>
+</field>
+
+<field label="f8" ID="20" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="ThreeMP$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="ThreeMP$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="21"/> </types>
+</field>
+
+<field label="f9" ID="22" parentID="5">
+   <tuple> <atom label="Configuration$2"/> <atom label="EightMP$1"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="EightMP$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="23"/> </types>
+</field>
+
+<field label="f10" ID="24" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="BasicFunctions$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="BasicFunctions$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="BasicFunctions$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="BasicFunctions$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="BasicFunctions$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="25"/> </types>
+</field>
+
+<field label="f11" ID="26" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Message$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Message$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Message$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Message$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Message$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="27"/> </types>
+</field>
+
+<field label="f12" ID="28" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="Communication$1"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Communication$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Communication$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="29"/> </types>
+</field>
+
+<field label="f13" ID="30" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Extras$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Extras$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Extras$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Extras$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Extras$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="31"/> </types>
+</field>
+
+<field label="f14" ID="32" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="Camera$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Camera$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="33"/> </types>
+</field>
+
+<field label="f15" ID="34" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="CellPhone$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="CellPhone$1"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="CellPhone$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="CellPhone$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="CellPhone$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="35"/> </types>
+</field>
+
+<sig label="SMS" ID="7" parentID="0">
+   <atom label="SMS$0"/>
+</sig>
+
+<sig label="MMS" ID="9" parentID="0">
+   <atom label="MMS$0"/>
+</sig>
+
+<sig label="VoiceCall" ID="11" parentID="0">
+   <atom label="VoiceCall$0"/>
+</sig>
+
+<sig label="WLAN" ID="13" parentID="0">
+   <atom label="WLAN$0"/>
+</sig>
+
+<sig label="Bluetooth" ID="15" parentID="0">
+   <atom label="Bluetooth$0"/>
+   <atom label="Bluetooth$1"/>
+</sig>
+
+<sig label="UMTS" ID="17" parentID="0">
+   <atom label="UMTS$0"/>
+</sig>
+
+<sig label="MP3" ID="19" parentID="0">
+   <atom label="MP3$0"/>
+   <atom label="MP3$1"/>
+   <atom label="MP3$2"/>
+</sig>
+
+<sig label="ThreeMP" ID="21" parentID="0">
+   <atom label="ThreeMP$0"/>
+</sig>
+
+<sig label="EightMP" ID="23" parentID="0">
+   <atom label="EightMP$0"/>
+   <atom label="EightMP$1"/>
+</sig>
+
+<sig label="BasicFunctions" ID="25" parentID="0">
+   <atom label="BasicFunctions$0"/>
+</sig>
+
+<sig label="Message" ID="27" parentID="0">
+   <atom label="Message$0"/>
+   <atom label="Message$1"/>
+</sig>
+
+<sig label="Communication" ID="29" parentID="0">
+   <atom label="Communication$0"/>
+   <atom label="Communication$1"/>
+</sig>
+
+<sig label="Extras" ID="31" parentID="0">
+   <atom label="Extras$0"/>
+</sig>
+
+<sig label="Camera" ID="33" parentID="0">
+   <atom label="Camera$0"/>
+</sig>
+
+<sig label="CellPhone" ID="35" parentID="0">
+   <atom label="CellPhone$0"/>
+   <atom label="CellPhone$1"/>
+</sig>
+
+<skolem label="$Tuple67_c" ID="36">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple125_c" ID="37">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple15_c" ID="38">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple191_c" ID="39">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple242_c" ID="40">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple273_c" ID="41">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple89_c" ID="42">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple199_c" ID="43">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple119_c" ID="44">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple88_c" ID="45">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple296_c" ID="46">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple60_c" ID="47">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple249_c" ID="48">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple275_c" ID="49">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple96_c" ID="50">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple209_c" ID="51">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple121_c" ID="52">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple247_c" ID="53">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple71_c" ID="54">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple188_c" ID="55">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple367_c" ID="56">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple411_c" ID="57">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple400_c" ID="58">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple111_c" ID="59">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple159_c" ID="60">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple265_c" ID="61">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple93_c" ID="62">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple162_c" ID="63">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple297_c" ID="64">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple25_c" ID="65">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple241_c" ID="66">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple12_c" ID="67">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple158_c" ID="68">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple286_c" ID="69">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple324_c" ID="70">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple91_c" ID="71">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple195_c" ID="72">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple202_c" ID="73">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple127_c" ID="74">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple345_c" ID="75">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple193_c" ID="76">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple354_c" ID="77">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple263_c" ID="78">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple211_c" ID="79">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple277_c" ID="80">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple399_c" ID="81">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple234_c" ID="82">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple321_c" ID="83">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple207_c" ID="84">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple103_c" ID="85">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple229_c" ID="86">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple130_c" ID="87">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple175_c" ID="88">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple160_c" ID="89">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple343_c" ID="90">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple203_c" ID="91">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple260_c" ID="92">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple189_c" ID="93">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple307_c" ID="94">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple353_c" ID="95">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple295_c" ID="96">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple182_c" ID="97">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple83_c" ID="98">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple403_c" ID="99">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple327_c" ID="100">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple5_c" ID="101">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple90_c" ID="102">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple226_c" ID="103">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple410_c" ID="104">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple167_c" ID="105">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple347_c" ID="106">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple227_c" ID="107">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple6_c" ID="108">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple95_c" ID="109">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple81_c" ID="110">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple397_c" ID="111">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple187_c" ID="112">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple75_c" ID="113">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple386_c" ID="114">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple131_c" ID="115">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple225_c" ID="116">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple66_c" ID="117">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple222_c" ID="118">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple357_c" ID="119">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple213_c" ID="120">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple64_c" ID="121">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple251_c" ID="122">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple164_c" ID="123">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple325_c" ID="124">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple233_c" ID="125">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple255_c" ID="126">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple299_c" ID="127">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple257_c" ID="128">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple11_c" ID="129">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple117_c" ID="130">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple364_c" ID="131">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple86_c" ID="132">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple105_c" ID="133">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple333_c" ID="134">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple330_c" ID="135">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple68_c" ID="136">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple73_c" ID="137">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple27_c" ID="138">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple10_c" ID="139">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple334_c" ID="140">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple359_c" ID="141">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple383_c" ID="142">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple198_c" ID="143">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple205_c" ID="144">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple120_c" ID="145">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple224_c" ID="146">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple280_c" ID="147">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple387_c" ID="148">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple87_c" ID="149">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple245_c" ID="150">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple19_c" ID="151">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple365_c" ID="152">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple109_c" ID="153">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple317_c" ID="154">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple294_c" ID="155">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple176_c" ID="156">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple166_c" ID="157">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple3_c" ID="158">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple293_c" ID="159">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple218_c" ID="160">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple185_c" ID="161">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple368_c" ID="162">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple346_c" ID="163">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple184_c" ID="164">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple382_c" ID="165">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple342_c" ID="166">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple303_c" ID="167">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple157_c" ID="168">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple283_c" ID="169">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple123_c" ID="170">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple171_c" ID="171">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple239_c" ID="172">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple97_c" ID="173">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple94_c" ID="174">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple419_c" ID="175">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple278_c" ID="176">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple7_c" ID="177">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+</instance>
+
+</alloy>

@@ -665,5 +665,5 @@ pred Tuple417 { some c: Configuration |#c.f14= 1 and #c.f15= 1  }
 pred Tuple419 { some c: Configuration |#c.f14= 0 and #c.f15= 1  } 
 
 
-pred ConjunctionTuple2{Tuple365 and Tuple201 and Tuple354 and Tuple107 and Tuple91 and Tuple114 and Tuple213 and Tuple95 and Tuple65 and Tuple6 and Tuple270 and Tuple3 and Tuple57 and Tuple353 and Tuple317 and Tuple234 and Tuple245 and Tuple246 and Tuple16 and Tuple331 and Tuple253 and Tuple117 and Tuple239 and Tuple226 and Tuple70 and Tuple275 and Tuple130 and Tuple233 and Tuple199 and Tuple294 and Tuple237 and Tuple358 and Tuple162 and Tuple88 and Tuple116 and Tuple279 and Tuple339 and Tuple410 and Tuple198 and Tuple273 and Tuple165 and Tuple105 and Tuple325 and Tuple217 and Tuple206 and Tuple224 and Tuple257 and Tuple251 and Tuple106 and Tuple173 and Tuple80 and Tuple19 and Tuple302 and Tuple243 and Tuple255 and Tuple11 and Tuple177 and Tuple180 and Tuple334 and Tuple102 and Tuple363 and Tuple167 and Tuple193 and Tuple351 and Tuple409 and Tuple320 and Tuple13 and Tuple309 and Tuple303 and Tuple296 and Tuple222 and Tuple244 and Tuple25 and Tuple327 }
- run ConjunctionTuple2 for 8
+pred ConjunctionTuple3{Tuple161 and Tuple118 and Tuple313 and Tuple409 and Tuple285 and Tuple341 and Tuple361 and Tuple246 and Tuple2 and Tuple22 }
+ run ConjunctionTuple3 for 5

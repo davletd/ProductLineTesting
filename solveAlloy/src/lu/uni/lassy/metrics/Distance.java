@@ -7,7 +7,7 @@ import org.jgrapht.UndirectedGraph;
 import org.jgrapht.alg.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultEdge;
 
-import fr.irisa.triskell.twise.generation.productLineTestGeneration;
+import fr.irisa.triskell.twise.generation.ProductLineTestGeneration;
 import fr.irisa.triskell.twise.generation.Tuple;
 import java.util.*;
 /**

@@ -1,0 +1,23 @@
+TestSuite: Incremental_scope[4,5]_duration_3000_solution#_0
+number of products in the suite: 10
+product name: Configuration$0_0
+Features: 
+SMS	MMS	VoiceCall	MP3	ThreeMP	BasicFunctions	Message	Extras	CellPhone	product name: Configuration$1_1
+Features: 
+SMS	MMS	VoiceCall	UMTS	MP3	EightMP	BasicFunctions	Message	Communication	Extras	CellPhone	product name: Configuration$2_2
+Features: 
+SMS	MMS	VoiceCall	WLAN	Bluetooth	UMTS	ThreeMP	BasicFunctions	Message	Communication	Extras	Camera	CellPhone	product name: Configuration$3_3
+Features: 
+SMS	VoiceCall	EightMP	BasicFunctions	Message	Extras	Camera	CellPhone	product name: Configuration$4_4
+Features: 
+SMS	VoiceCall	WLAN	Bluetooth	MP3	ThreeMP	EightMP	BasicFunctions	Message	Communication	Extras	CellPhone	product name: Configuration$0_0
+Features: 
+SMS	MMS	VoiceCall	Bluetooth	UMTS	MP3	BasicFunctions	Message	Communication	Extras	CellPhone	product name: Configuration$1_1
+Features: 
+SMS	VoiceCall	EightMP	BasicFunctions	Message	Extras	Camera	CellPhone	product name: Configuration$2_2
+Features: 
+SMS	VoiceCall	WLAN	UMTS	MP3	EightMP	BasicFunctions	Message	Communication	Extras	CellPhone	product name: Configuration$3_3
+Features: 
+SMS	MMS	VoiceCall	MP3	ThreeMP	BasicFunctions	Message	Extras	Camera	CellPhone	product name: Configuration$4_4
+Features: 
+SMS	VoiceCall	WLAN	Bluetooth	UMTS	ThreeMP	BasicFunctions	Message	Communication	Extras	Camera	CellPhone	
