@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureDiagram:FeatureDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureDiagram="http://www.kermeta.org/featureDiagram" xsi:schemaLocation="http://www.kermeta.org/featureDiagram ../metamodel/featureDiagram.ecore">
+  <features name="HealthEmergencySystem" children="//@features.1 //@features.2">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Transport" children="//@features.37" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="HospitalAdmit" parents="//@features.0"/>
+  <features name="Discharge"/>
+  <features name="Billing"/>
+  <features name="Treatment"/>
+  <features name="Pharmacy"/>
+  <features name="Pharmacy_f"/>
+  <features name="Pharmacy_m"/>
+  <features name="Pharmacy_s"/>
+  <features name="Doctor"/>
+  <features name="Doctor_f"/>
+  <features name="Doctor_m"/>
+  <features name="Doctor_s"/>
+  <features name="Testing"/>
+  <features name="Testing_f"/>
+  <features name="Testing_m"/>
+  <features name="Testing_s"/>
+  <features name="Catering_f"/>
+  <features name="Catering_m"/>
+  <features name="Catering_s"/>
+  <features name="Ward_s"/>
+  <features name="Ward_m"/>
+  <features name="Ward_f"/>
+  <features name="SpecialRoom"/>
+  <features name="SpecialRoom_f"/>
+  <features name="SpecialRoom_m"/>
+  <features name="SpecialRoom_s"/>
+  <features name="AdmitRoom"/>
+  <features name="InsuranceCompany"/>
+  <features name="InsuranceCompany_f"/>
+  <features name="InsuranceCompany_m"/>
+  <features name="InsuranceCompany_s"/>
+  <features name="HealthRecords"/>
+  <features name="HealthRecords_f"/>
+  <features name="HealthRecords_m"/>
+  <features name="HealthRecords_s"/>
+  <features name="Ambulance" parents="//@features.1"/>
+  <features name="Ambulance_f"/>
+  <features name="Ambulance_m"/>
+  <features name="Ambulance_s"/>
+  <features name="Documents&#x9;"/>
+</featureDiagram:FeatureDiagram>

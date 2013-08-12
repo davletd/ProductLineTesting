@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureDiagram:FeatureDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureDiagram="http://www.kermeta.org/featureDiagram" root="//@features.0">
+  <features name="CrisisManagementSystem" children="//@features.1 //@features.5 //@features.7 //@features.19 //@features.24 //@features.58 //@features.59 //@features.63">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="LongDistanceCall" children="//@features.2 //@features.3 //@features.4" parents="//@features.0">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="PDA" parents="//@features.1"/>
+  <features name="GSM" parents="//@features.1"/>
+  <features name="WalkieTalkie" parents="//@features.1"/>
+  <features name="Coordinator" children="//@features.6" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="MultiCoordinators" optional="true" parents="//@features.5"/>
+  <features name="Mission" children="//@features.8 //@features.9 //@features.10 //@features.11 //@features.12 //@features.13 //@features.14 //@features.15 //@features.18" parents="//@features.0">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="Rescue" parents="//@features.7"/>
+  <features name="Observe" parents="//@features.7"/>
+  <features name="Transport" parents="//@features.7"/>
+  <features name="RemoveObstacle" parents="//@features.7"/>
+  <features name="Investigation" parents="//@features.7"/>
+  <features name="NurseWounded" parents="//@features.7"/>
+  <features name="Pumping" parents="//@features.7"/>
+  <features name="Repair" children="//@features.16 //@features.17" parents="//@features.7">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="ElecLine" parents="//@features.15"/>
+  <features name="TelecomLine" parents="//@features.15"/>
+  <features name="SortWounded" parents="//@features.7"/>
+  <features name="ITOption" optional="true" children="//@features.20 //@features.21 //@features.22 //@features.23" parents="//@features.0">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="SecureCommunincation" parents="//@features.19"/>
+  <features name="SurveillanceSystem" parents="//@features.19"/>
+  <features name="AuthentificationSystem" parents="//@features.19"/>
+  <features name="DataBaseSystem" parents="//@features.19"/>
+  <features name="ServiceUsed" children="//@features.25 //@features.55 //@features.45" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="GovernementalServices" children="//@features.26 //@features.29 //@features.32" parents="//@features.24">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="FireDepartment" optional="true" children="//@features.27 //@features.28" parents="//@features.25">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="FireMan" parents="//@features.26"/>
+  <features name="FireTruck" optional="true" parents="//@features.26"/>
+  <features name="Police" optional="true" children="//@features.30 //@features.31" parents="//@features.25">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="PoliceMan" parents="//@features.29"/>
+  <features name="PoliceSpecialUnit" optional="true" parents="//@features.29"/>
+  <features name="Army" optional="true" children="//@features.33 //@features.36 //@features.40" parents="//@features.25">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="Navy" children="//@features.34 //@features.35" parents="//@features.32">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="NavySoldier" parents="//@features.33"/>
+  <features name="Boat" optional="true" parents="//@features.33"/>
+  <features name="TheArmy" children="//@features.37 //@features.38 //@features.39" parents="//@features.32">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Soldier" parents="//@features.36"/>
+  <features name="ArmySpecialUnit" optional="true" parents="//@features.36"/>
+  <features name="LogisticVehicle" optional="true" parents="//@features.36"/>
+  <features name="AirForce" children="//@features.41 //@features.42 //@features.43" parents="//@features.32">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Helicopter" optional="true" parents="//@features.40"/>
+  <features name="AirForceSoldier" parents="//@features.40"/>
+  <features name="Aircraft" optional="true" children="//@features.44" parents="//@features.40">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="CargoAircraft" optional="true" parents="//@features.43"/>
+  <features name="MedicalServices" optional="true" children="//@features.46 //@features.50 //@features.53 //@features.54" parents="//@features.24">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="PublicHospital" children="//@features.47 //@features.48 //@features.49" parents="//@features.45">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="PublicFirstAidDoctor" optional="true" parents="//@features.46"/>
+  <features name="FirstAidWorker" parents="//@features.46"/>
+  <features name="Ambulance" optional="true" parents="//@features.46"/>
+  <features name="PrivateHospital" children="//@features.51 //@features.52" parents="//@features.45">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="PrivateFirstAidDoctor" optional="true" parents="//@features.50"/>
+  <features name="PrivateAmbulance" optional="true" parents="//@features.50"/>
+  <features name="FirstAidDoctor" parents="//@features.45"/>
+  <features name="PrivateAmbulanceCompagny" parents="//@features.45"/>
+  <features name="ExternalCompagny" optional="true" children="//@features.56 //@features.57" parents="//@features.24">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="Electricity" parents="//@features.55"/>
+  <features name="Telecom" parents="//@features.55"/>
+  <features name="ContainsHumanVictims" optional="true" parents="//@features.0"/>
+  <features name="Area" children="//@features.60 //@features.61 //@features.62" parents="//@features.0">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="Small" parents="//@features.59"/>
+  <features name="Medium" parents="//@features.59"/>
+  <features name="Large" parents="//@features.59"/>
+  <features name="CrisisType" children="//@features.64" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="SuddenCrises" children="//@features.65 //@features.69 //@features.72 //@features.75" parents="//@features.63">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="PlantExplosion" children="//@features.66 //@features.67 //@features.68" parents="//@features.64">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="NuclearPlantExplosion" parents="//@features.65"/>
+  <features name="TraditionalPlantExplosion" parents="//@features.65"/>
+  <features name="ChemicalPlantExplosion" parents="//@features.65"/>
+  <features name="MajorAccident" children="//@features.70 //@features.71" parents="//@features.64">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="PlaneCrash" parents="//@features.69"/>
+  <features name="CarCrash" parents="//@features.69"/>
+  <features name="TerroristAttack" children="//@features.73 //@features.74" parents="//@features.64">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="BombAttack" parents="//@features.72"/>
+  <features name="ChemicalAttack" parents="//@features.72"/>
+  <features name="NaturalDisaster" children="//@features.78 //@features.79 //@features.76 //@features.77" parents="//@features.64">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="Flood" parents="//@features.75"/>
+  <features name="Earthquake" parents="//@features.75"/>
+  <features name="Fire" parents="//@features.75"/>
+  <features name="Storm" children="//@features.80 //@features.81" parents="//@features.75">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="Hurricane" parents="//@features.79"/>
+  <features name="Snowstorm" parents="//@features.79"/>
+  <constraintEdges target="//@features.38" source="//@features.72">
+    <constraint xsi:type="featureDiagram:Require"/>
+  </constraintEdges>
+  <constraintEdges target="//@features.31" source="//@features.72">
+    <constraint xsi:type="featureDiagram:Require"/>
+  </constraintEdges>
+  <constraintEdges target="//@features.36" source="//@features.66">
+    <constraint xsi:type="featureDiagram:Require"/>
+  </constraintEdges>
+</featureDiagram:FeatureDiagram>

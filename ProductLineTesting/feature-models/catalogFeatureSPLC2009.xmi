@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureDiagram:FeatureDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureDiagram="http://www.kermeta.org/featureDiagram" xsi:schemaLocation="http://www.kermeta.org/featureDiagram ../metamodel/featureDiagram.ecore" root="//@features.0">
+  <features name="catalogueFeature" selected="true">
+    <outgoingEdge child="//@features.2"/>
+    <outgoingEdge child="//@features.1"/>
+    <operator xsi:type="featureDiagram:And"/>
+    <models name="catalogStructure"/>
+  </features>
+  <features name="categories" incomingEdge="//@features.0/@outgoingEdge.1" selected="true" optional="true">
+    <outgoingEdge child="//@features.6"/>
+    <outgoingEdge child="//@features.7"/>
+    <outgoingEdge child="//@features.8"/>
+    <outgoingEdge child="//@features.9"/>
+    <operator xsi:type="featureDiagram:And"/>
+    <models name="categories"/>
+  </features>
+  <features name="productInformation" incomingEdge="//@features.0/@outgoingEdge.0" selected="true">
+    <outgoingEdge child="//@features.3"/>
+    <operator xsi:type="featureDiagram:And"/>
+    <models name="productInformation"/>
+  </features>
+  <features name="associatedAssets" incomingEdge="//@features.2/@outgoingEdge.0" selected="true" optional="true">
+    <outgoingEdge child="//@features.4"/>
+    <outgoingEdge child="//@features.5"/>
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="TwoDImage" incomingEdge="//@features.3/@outgoingEdge.0" selected="true">
+    <models name="image2D"/>
+  </features>
+  <features name="ThreeDImage" incomingEdge="//@features.3/@outgoingEdge.1" selected="true">
+    <models name="image3D"/>
+  </features>
+  <features name="multipleClassification" incomingEdge="//@features.1/@outgoingEdge.0" selected="true" optional="true">
+    <models name="multipleClassification"/>
+  </features>
+  <features name="multiLevel" incomingEdge="//@features.1/@outgoingEdge.1" selected="true" optional="true">
+    <models name="multiLevel"/>
+  </features>
+  <features name="description" incomingEdge="//@features.1/@outgoingEdge.2" selected="true" optional="true">
+    <models name="description"/>
+  </features>
+  <features name="thumbnails" incomingEdge="//@features.1/@outgoingEdge.3" selected="true" optional="true">
+    <models name="thumbnails"/>
+  </features>
+  <constraintEdges target="//@features.9" source="//@features.4">
+    <constraint xsi:type="featureDiagram:Require"/>
+  </constraintEdges>
+</featureDiagram:FeatureDiagram>

@@ -1,0 +1,212 @@
+package Ecore2Alloy;
+require kermeta
+require "platform:/resource/ProductLineTesting/ProductLineTesting/Ecore2Alloy/featureDiagram.kmt"
+using kermeta::standard
+using kermeta::utils
+using featureDiagram
+class EcoreFeatureDiagramToAlloy{
+operation generate(fd:FeatureDiagram):String is do
+var _res: StringBuffer init StringBuffer.new
+_res.append("\nmodule ")
+_res.append(fd.root.name)
+_res.append("Model\n\none sig ProductConfigurations\n{\t\n\tconfigurations : set Configuration\n}\n\nsig Configuration\n{\n")
+var i : Integer init 1
+_res.append("")
+var mandatoryFeatures : Sequence<Feature> init fd.getMandatoryFeature()
+_res.append("")
+var hmap : Hashtable<Feature, String> init Hashtable<Feature, String>.new
+_res.append("")
+fd.features.each{f|
+_res.append("")
+hmap.put(f, "f"+i.toString)
+_res.append("")
+if (mandatoryFeatures.contains(f)) then
+_res.append("f")
+_res.append(i.toString)
+_res.append(": one ")
+_res.append(f.name)
+_res.append(",\n")
+else
+_res.append("f")
+_res.append(i.toString)
+_res.append(": lone ")
+_res.append(f.name)
+_res.append(",\n")
+end
+_res.append("")
+i:= i+1
+_res.append("")
+}
+_res.append("}\n\n")
+fd.features.each{f|
+_res.append("sig ")
+_res.append(f.name)
+_res.append("{}\n")
+}
+_res.append("\nfact Configuration_cardinality\n{}\n\nfact Configuration_container\n{\n\tall c : Configuration | c in ProductConfigurations.configurations\n}\n\n//Constraints due to require and exclude\n")
+var fact_constraint_counter : Integer init 1
+_res.append("")
+fd.constraintEdges.each{ce|
+_res.append("\n")
+if (ce.constraint.isInstanceOf(Require)) then
+_res.append("// ")
+_res.append(ce.source.name)
+_res.append(" requires ")
+_res.append(ce.target.name)
+_res.append("\nfact Invariant_")
+_res.append(fact_constraint_counter.toString)
+_res.append("\n{\n\tall c:Configuration | #c.")
+_res.append(hmap.getValue(ce.source))
+_res.append("==1 implies (#c.")
+_res.append(hmap.getValue(ce.target))
+_res.append("=1)\n}   \n")
+ fact_constraint_counter := fact_constraint_counter+1 
+_res.append("")
+end
+_res.append("")
+if (ce.constraint.isInstanceOf(Mutex)) then
+_res.append("// ")
+_res.append(ce.source.name)
+_res.append(" excludes ")
+_res.append(ce.target.name)
+_res.append("\nfact Invariant_")
+_res.append(fact_constraint_counter.toString)
+_res.append("\n{\n\tall c:Configuration | #c.")
+_res.append(hmap.getValue(ce.source))
+_res.append("==1 implies (#c.")
+_res.append(hmap.getValue(ce.target))
+_res.append("=0)\n}\n")
+ fact_constraint_counter := fact_constraint_counter+1 
+_res.append("")
+end
+_res.append("")
+}
+_res.append("\n// Constraints due to the Operators\n")
+var operator_constraint_counter : Integer init 1
+_res.append("")
+fd.features.each{f|
+_res.append("")
+if (f.optional == true) then
+_res.append("// ")
+_res.append(f.name)
+_res.append(" Optional condition   \nfact Invariant_Opreator_")
+_res.append(operator_constraint_counter.toString)
+_res.append("\n{\n\tall c:Configuration | #c.")
+_res.append(hmap.getValue(f))
+_res.append("==1 implies (")
+f.parents.each{c| if (f.parents.last == c) then 
+_res.append(" #c.")
+_res.append(hmap.getValue(c))
+_res.append("=1")
+else
+_res.append(" #c.")
+_res.append(hmap.getValue(c))
+_res.append("=1 and ")
+end }
+_res.append(")\n}   \n")
+ operator_constraint_counter := operator_constraint_counter+1 
+_res.append("")
+end
+_res.append("")
+if (f.operator != void) then
+_res.append("")
+if (f.operator.isInstanceOf(And)) then
+_res.append("// ")
+_res.append(f.name)
+_res.append(" And Operator => ")
+f.getMandatoryChildren().each{c|
+_res.append(" ")
+_res.append(c.name)
+_res.append(" AND ")
+}
+_res.append("  \nfact Invariant_Opreator_")
+_res.append(operator_constraint_counter.toString)
+_res.append("\n{\n")
+if ( not f.getMandatoryChildren().isEmpty() ) then
+_res.append("\tall c:Configuration | #c.")
+_res.append(hmap.getValue(f))
+_res.append("==1 implies (")
+f.getMandatoryChildren().each{c| if (f.getMandatoryChildren().last == c) then 
+_res.append(" #c.")
+_res.append(hmap.getValue(c))
+_res.append("=1")
+else
+_res.append(" #c.")
+_res.append(hmap.getValue(c))
+_res.append("=1 and ")
+end }
+_res.append(")\n")
+end
+_res.append("}   \n")
+ operator_constraint_counter := operator_constraint_counter+1 
+_res.append("")
+end
+_res.append("")
+if (f.operator.isInstanceOf(Xor)) then
+_res.append("// ")
+_res.append(f.name)
+_res.append(" XOR Operator => ")
+f.children().each{c|
+_res.append(" ")
+_res.append(c.name)
+_res.append(" XOR ")
+}
+_res.append("  \nfact Invariant_Opreator_")
+_res.append(operator_constraint_counter.toString)
+_res.append("\n{\n\tall c:Configuration | #c.")
+_res.append(hmap.getValue(f))
+_res.append("==1 implies ( (")
+f.children().each{c|
+_res.append(" #c.")
+_res.append(hmap.getValue(c))
+_res.append(" + ")
+}
+_res.append(" 0)==1)\n}   \n")
+ operator_constraint_counter := operator_constraint_counter+1 
+_res.append("")
+end
+_res.append("")
+if (f.operator.isInstanceOf(Or)) then
+_res.append("// ")
+_res.append(f.name)
+_res.append(" OR Operator => ")
+f.children().each{c|
+_res.append(" ")
+_res.append(c.name)
+_res.append(" OR ")
+}
+_res.append("  \nfact Invariant_Opreator_")
+_res.append(operator_constraint_counter.toString)
+_res.append("\n{\n\tall c:Configuration | #c.")
+_res.append(hmap.getValue(f))
+_res.append("==1 implies ( (")
+f.children().each{c|
+_res.append(" #c.")
+_res.append(hmap.getValue(c))
+_res.append(" + ")
+}
+_res.append(" 0)<=")
+_res.append(f.children().size.toString())
+_res.append(")\n}   \n")
+ operator_constraint_counter := operator_constraint_counter+1 
+_res.append("")
+end
+_res.append("")
+end
+_res.append("")
+}
+_res.append("\n/*\nfact AllConstraints\n{\n")
+from var j : Integer init 1  until j==(operator_constraint_counter-1)
+loop
+_res.append("\n\tpred_")
+_res.append(j.toString )
+_res.append(" and ")
+j := j+1
+_res.append(" ")
+end
+_res.append("\n\tpred_")
+_res.append((operator_constraint_counter-1).toString )
+_res.append("\n\n}\n*/")
+result := _res.toString
+end
+}

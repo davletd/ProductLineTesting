@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureDiagram:FeatureDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureDiagram="http://www.kermeta.org/featureDiagram" xsi:schemaLocation="http://www.kermeta.org/featureDiagram ../metamodel/featureDiagram.ecore">
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="SMS" parents="//@features.10"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="MMS" optional="true" parents="//@features.10"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="VoiceCall" parents="//@features.9"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="WLAN" optional="true" parents="//@features.11"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="Bluetooth" optional="true" parents="//@features.11"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="UMTS" optional="true" parents="//@features.11"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="MP3" optional="true" parents="//@features.12"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="ThreeMP" parents="//@features.13"/>
+  <features xsi:type="featureDiagram:PrimitiveFeature" name="EightMP" parents="//@features.13"/>
+  <features name="BasicFunctions" children="//@features.10 //@features.2" parents="//@features.14">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Message" children="//@features.0 //@features.1" parents="//@features.9">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Communication" optional="true" children="//@features.3 //@features.4 //@features.5" parents="//@features.14">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Extras" children="//@features.6 //@features.13" parents="//@features.14">
+    <operator xsi:type="featureDiagram:Or"/>
+  </features>
+  <features name="Camera" optional="true" children="//@features.7 //@features.8" parents="//@features.12">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="CellPhone" children="//@features.11 //@features.9 //@features.12">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+</featureDiagram:FeatureDiagram>

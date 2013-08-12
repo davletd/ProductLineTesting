@@ -1,0 +1,697 @@
+<alloy builddate="2008/10/27 23:45 EDT">
+
+<instance bitwidth="4" maxseq="7" command="Run ConjunctionTuple14 for 10" filename="">
+
+<sig label="univ" ID="0" builtin="yes">
+   <atom label="ProductConfigurations"/>
+   <atom label="Configuration$0"/>
+   <atom label="Configuration$1"/>
+   <atom label="Configuration$2"/>
+   <atom label="Configuration$3"/>
+   <atom label="Configuration$4"/>
+   <atom label="HealthEmergencySystem$0"/>
+   <atom label="Transport$0"/>
+   <atom label="HospitalAdmit$0"/>
+   <atom label="HospitalAdmit$1"/>
+   <atom label="Ambulance$0"/>
+   <atom label="Documents$0"/>
+   <atom label="Documents$1"/>
+   <atom label="Discharge$0"/>
+   <atom label="Billing$0"/>
+   <atom label="Treatment$0"/>
+   <atom label="Pharmacy$0"/>
+   <atom label="Pharmacy$1"/>
+   <atom label="Pharmacy_f$0"/>
+   <atom label="Pharmacy_s$0"/>
+   <atom label="Pharmacy_s$1"/>
+   <atom label="Pharmacy_s$2"/>
+   <atom label="Pharmacy_s$3"/>
+   <atom label="Doctor$0"/>
+   <atom label="Doctor_f$0"/>
+   <atom label="Doctor_s$0"/>
+   <atom label="Doctor_s$1"/>
+   <atom label="Testing$0"/>
+   <atom label="Testing$1"/>
+   <atom label="Testing_f$0"/>
+   <atom label="Testing_f$1"/>
+   <atom label="Testing_s$0"/>
+   <atom label="AdmitRoom$0"/>
+   <atom label="Ambulance_f$0"/>
+   <atom label="Ambulance_s$0"/>
+   <atom label="HealthRecords$0"/>
+   <atom label="HealthRecords$1"/>
+   <atom label="HealthRecords$2"/>
+   <atom label="HealthRecords$3"/>
+   <atom label="InsuranceCompany$0"/>
+   <atom label="InsuranceCompany$1"/>
+   <atom label="Catering$0"/>
+   <atom label="Catering$1"/>
+   <atom label="Catering_f$0"/>
+   <atom label="HealthRecords_f$0"/>
+   <atom label="InsuranceCompany_f$0"/>
+   <atom label="InsuranceCompany_s$0"/>
+   <atom label="InsuranceCompany_s$1"/>
+   <atom label="InsuranceCompany_s$2"/>
+   <atom label="HealthRecords_s$0"/>
+   <atom label="HealthRecords_s$1"/>
+   <atom label="SpecialRoom$0"/>
+   <atom label="SpecialRoom_s$0"/>
+   <atom label="SpecialRoom_f$0"/>
+   <atom label="Ward_s$0"/>
+   <atom label="Ward_f$0"/>
+   <atom label="Catering_s$0"/>
+   <atom label="-8"/>
+   <atom label="-7"/>
+   <atom label="-6"/>
+   <atom label="-5"/>
+   <atom label="-4"/>
+   <atom label="-3"/>
+   <atom label="-2"/>
+   <atom label="-1"/>
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+   <atom label="7"/>
+</sig>
+
+<sig label="Int" ID="1" parentID="0" builtin="yes">
+   <atom label="-8"/>
+   <atom label="-7"/>
+   <atom label="-6"/>
+   <atom label="-5"/>
+   <atom label="-4"/>
+   <atom label="-3"/>
+   <atom label="-2"/>
+   <atom label="-1"/>
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+   <atom label="7"/>
+</sig>
+
+<sig label="seq/Int" ID="2" parentID="1" builtin="yes">
+   <atom label="0"/>
+   <atom label="1"/>
+   <atom label="2"/>
+   <atom label="3"/>
+   <atom label="4"/>
+   <atom label="5"/>
+   <atom label="6"/>
+</sig>
+
+<sig label="ProductConfigurations" ID="3" parentID="0" one="yes">
+   <atom label="ProductConfigurations"/>
+</sig>
+
+<field label="configurations" ID="4" parentID="3">
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$0"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$1"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$2"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$3"/> </tuple>
+   <tuple> <atom label="ProductConfigurations"/> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="3"/> <type ID="5"/> </types>
+</field>
+
+<sig label="Configuration" ID="5" parentID="0">
+   <atom label="Configuration$0"/>
+   <atom label="Configuration$1"/>
+   <atom label="Configuration$2"/>
+   <atom label="Configuration$3"/>
+   <atom label="Configuration$4"/>
+</sig>
+
+<field label="f1" ID="6" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="HealthEmergencySystem$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="HealthEmergencySystem$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="HealthEmergencySystem$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="HealthEmergencySystem$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="HealthEmergencySystem$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="7"/> </types>
+</field>
+
+<field label="f2" ID="8" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Transport$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Transport$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Transport$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Transport$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Transport$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="9"/> </types>
+</field>
+
+<field label="f3" ID="10" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="HospitalAdmit$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="HospitalAdmit$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="HospitalAdmit$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="HospitalAdmit$1"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="HospitalAdmit$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="11"/> </types>
+</field>
+
+<field label="f4" ID="12" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Ambulance$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Ambulance$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Ambulance$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Ambulance$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Ambulance$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="13"/> </types>
+</field>
+
+<field label="f5" ID="14" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Documents$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Documents$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Documents$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Documents$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Documents$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="15"/> </types>
+</field>
+
+<field label="f6" ID="16" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Discharge$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Discharge$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Discharge$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Discharge$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Discharge$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="17"/> </types>
+</field>
+
+<field label="f7" ID="18" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Billing$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Billing$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Billing$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Billing$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Billing$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="19"/> </types>
+</field>
+
+<field label="f8" ID="20" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Treatment$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Treatment$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Treatment$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Treatment$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Treatment$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="21"/> </types>
+</field>
+
+<field label="f9" ID="22" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Pharmacy$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Pharmacy$1"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Pharmacy$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Pharmacy$1"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Pharmacy$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="23"/> </types>
+</field>
+
+<field label="f10" ID="24" parentID="5">
+   <tuple> <atom label="Configuration$2"/> <atom label="Pharmacy_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Pharmacy_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="25"/> </types>
+</field>
+
+<field label="f11" ID="26" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Pharmacy_s$3"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Pharmacy_s$2"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Pharmacy_s$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="27"/> </types>
+</field>
+
+<field label="f12" ID="28" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Doctor$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Doctor$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Doctor$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Doctor$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Doctor$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="29"/> </types>
+</field>
+
+<field label="f13" ID="30" parentID="5">
+   <tuple> <atom label="Configuration$3"/> <atom label="Doctor_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Doctor_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="31"/> </types>
+</field>
+
+<field label="f14" ID="32" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Doctor_s$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Doctor_s$1"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Doctor_s$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="33"/> </types>
+</field>
+
+<field label="f15" ID="34" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Testing$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Testing$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Testing$1"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Testing$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="35"/> </types>
+</field>
+
+<field label="f16" ID="36" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Testing_f$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Testing_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Testing_f$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="37"/> </types>
+</field>
+
+<field label="f17" ID="38" parentID="5">
+   <tuple> <atom label="Configuration$3"/> <atom label="Testing_s$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="39"/> </types>
+</field>
+
+<field label="f18" ID="40" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="AdmitRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="AdmitRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="AdmitRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="AdmitRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="AdmitRoom$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="41"/> </types>
+</field>
+
+<field label="f19" ID="42" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="Ambulance_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Ambulance_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="43"/> </types>
+</field>
+
+<field label="f20" ID="44" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Ambulance_s$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="Ambulance_s$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Ambulance_s$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="45"/> </types>
+</field>
+
+<field label="f21" ID="46" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="HealthRecords$3"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="HealthRecords$2"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="HealthRecords$3"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="HealthRecords$3"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="HealthRecords$3"/> </tuple>
+   <types> <type ID="5"/> <type ID="47"/> </types>
+</field>
+
+<field label="f22" ID="48" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="InsuranceCompany$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="InsuranceCompany$1"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="InsuranceCompany$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="InsuranceCompany$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="InsuranceCompany$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="49"/> </types>
+</field>
+
+<field label="f23" ID="50" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Catering$1"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Catering$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Catering$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="51"/> </types>
+</field>
+
+<field label="f24" ID="52" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="Catering_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="Catering_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Catering_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="53"/> </types>
+</field>
+
+<field label="f25" ID="54" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="HealthRecords_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="HealthRecords_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="55"/> </types>
+</field>
+
+<field label="f26" ID="56" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="InsuranceCompany_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="InsuranceCompany_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="57"/> </types>
+</field>
+
+<field label="f27" ID="58" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="InsuranceCompany_s$2"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="InsuranceCompany_s$1"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="InsuranceCompany_s$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="59"/> </types>
+</field>
+
+<field label="f28" ID="60" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="HealthRecords_s$1"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="HealthRecords_s$1"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="HealthRecords_s$1"/> </tuple>
+   <types> <type ID="5"/> <type ID="61"/> </types>
+</field>
+
+<field label="f29" ID="62" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="SpecialRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="SpecialRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="SpecialRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="SpecialRoom$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="SpecialRoom$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="63"/> </types>
+</field>
+
+<field label="f30" ID="64" parentID="5">
+   <types> <type ID="5"/> <type ID="65"/> </types>
+</field>
+
+<field label="f31" ID="66" parentID="5">
+   <types> <type ID="5"/> <type ID="67"/> </types>
+</field>
+
+<field label="f32" ID="68" parentID="5">
+   <tuple> <atom label="Configuration$0"/> <atom label="SpecialRoom_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$1"/> <atom label="SpecialRoom_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$2"/> <atom label="SpecialRoom_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="SpecialRoom_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="SpecialRoom_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="69"/> </types>
+</field>
+
+<field label="f33" ID="70" parentID="5">
+   <tuple> <atom label="Configuration$2"/> <atom label="Ward_s$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="71"/> </types>
+</field>
+
+<field label="f34" ID="72" parentID="5">
+   <tuple> <atom label="Configuration$1"/> <atom label="Ward_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$3"/> <atom label="Ward_f$0"/> </tuple>
+   <tuple> <atom label="Configuration$4"/> <atom label="Ward_f$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="73"/> </types>
+</field>
+
+<field label="f35" ID="74" parentID="5">
+   <types> <type ID="5"/> <type ID="75"/> </types>
+</field>
+
+<sig label="HealthEmergencySystem" ID="7" parentID="0">
+   <atom label="HealthEmergencySystem$0"/>
+</sig>
+
+<sig label="Transport" ID="9" parentID="0">
+   <atom label="Transport$0"/>
+</sig>
+
+<sig label="HospitalAdmit" ID="11" parentID="0">
+   <atom label="HospitalAdmit$0"/>
+   <atom label="HospitalAdmit$1"/>
+</sig>
+
+<sig label="Ambulance" ID="13" parentID="0">
+   <atom label="Ambulance$0"/>
+</sig>
+
+<sig label="Documents" ID="15" parentID="0">
+   <atom label="Documents$0"/>
+   <atom label="Documents$1"/>
+</sig>
+
+<sig label="Discharge" ID="17" parentID="0">
+   <atom label="Discharge$0"/>
+</sig>
+
+<sig label="Billing" ID="19" parentID="0">
+   <atom label="Billing$0"/>
+</sig>
+
+<sig label="Treatment" ID="21" parentID="0">
+   <atom label="Treatment$0"/>
+</sig>
+
+<sig label="Pharmacy" ID="23" parentID="0">
+   <atom label="Pharmacy$0"/>
+   <atom label="Pharmacy$1"/>
+</sig>
+
+<sig label="Pharmacy_f" ID="25" parentID="0">
+   <atom label="Pharmacy_f$0"/>
+</sig>
+
+<sig label="Pharmacy_s" ID="27" parentID="0">
+   <atom label="Pharmacy_s$0"/>
+   <atom label="Pharmacy_s$1"/>
+   <atom label="Pharmacy_s$2"/>
+   <atom label="Pharmacy_s$3"/>
+</sig>
+
+<sig label="Doctor" ID="29" parentID="0">
+   <atom label="Doctor$0"/>
+</sig>
+
+<sig label="Doctor_f" ID="31" parentID="0">
+   <atom label="Doctor_f$0"/>
+</sig>
+
+<sig label="Doctor_s" ID="33" parentID="0">
+   <atom label="Doctor_s$0"/>
+   <atom label="Doctor_s$1"/>
+</sig>
+
+<sig label="Testing" ID="35" parentID="0">
+   <atom label="Testing$0"/>
+   <atom label="Testing$1"/>
+</sig>
+
+<sig label="Testing_f" ID="37" parentID="0">
+   <atom label="Testing_f$0"/>
+   <atom label="Testing_f$1"/>
+</sig>
+
+<sig label="Testing_s" ID="39" parentID="0">
+   <atom label="Testing_s$0"/>
+</sig>
+
+<sig label="AdmitRoom" ID="41" parentID="0">
+   <atom label="AdmitRoom$0"/>
+</sig>
+
+<sig label="Ambulance_f" ID="43" parentID="0">
+   <atom label="Ambulance_f$0"/>
+</sig>
+
+<sig label="Ambulance_s" ID="45" parentID="0">
+   <atom label="Ambulance_s$0"/>
+</sig>
+
+<sig label="HealthRecords" ID="47" parentID="0">
+   <atom label="HealthRecords$0"/>
+   <atom label="HealthRecords$1"/>
+   <atom label="HealthRecords$2"/>
+   <atom label="HealthRecords$3"/>
+</sig>
+
+<sig label="InsuranceCompany" ID="49" parentID="0">
+   <atom label="InsuranceCompany$0"/>
+   <atom label="InsuranceCompany$1"/>
+</sig>
+
+<sig label="Catering" ID="51" parentID="0">
+   <atom label="Catering$0"/>
+   <atom label="Catering$1"/>
+</sig>
+
+<sig label="Catering_f" ID="53" parentID="0">
+   <atom label="Catering_f$0"/>
+</sig>
+
+<sig label="HealthRecords_f" ID="55" parentID="0">
+   <atom label="HealthRecords_f$0"/>
+</sig>
+
+<sig label="InsuranceCompany_f" ID="57" parentID="0">
+   <atom label="InsuranceCompany_f$0"/>
+</sig>
+
+<sig label="InsuranceCompany_s" ID="59" parentID="0">
+   <atom label="InsuranceCompany_s$0"/>
+   <atom label="InsuranceCompany_s$1"/>
+   <atom label="InsuranceCompany_s$2"/>
+</sig>
+
+<sig label="HealthRecords_s" ID="61" parentID="0">
+   <atom label="HealthRecords_s$0"/>
+   <atom label="HealthRecords_s$1"/>
+</sig>
+
+<sig label="SpecialRoom" ID="63" parentID="0">
+   <atom label="SpecialRoom$0"/>
+</sig>
+
+<sig label="Ward" ID="65" parentID="0">
+</sig>
+
+<sig label="SpecialRoom_s" ID="67" parentID="0">
+   <atom label="SpecialRoom_s$0"/>
+</sig>
+
+<sig label="SpecialRoom_f" ID="69" parentID="0">
+   <atom label="SpecialRoom_f$0"/>
+</sig>
+
+<sig label="Ward_s" ID="71" parentID="0">
+   <atom label="Ward_s$0"/>
+</sig>
+
+<sig label="Ward_f" ID="73" parentID="0">
+   <atom label="Ward_f$0"/>
+</sig>
+
+<sig label="Catering_s" ID="75" parentID="0">
+   <atom label="Catering_s$0"/>
+</sig>
+
+<skolem label="$Tuple2158_c" ID="76">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1582_c" ID="77">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple426_c" ID="78">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2380_c" ID="79">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1600_c" ID="80">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2089_c" ID="81">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2124_c" ID="82">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1725_c" ID="83">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1165_c" ID="84">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1746_c" ID="85">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple310_c" ID="86">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1259_c" ID="87">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple764_c" ID="88">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1388_c" ID="89">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1643_c" ID="90">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2078_c" ID="91">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1394_c" ID="92">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1651_c" ID="93">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple688_c" ID="94">
+   <tuple> <atom label="Configuration$1"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple877_c" ID="95">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1413_c" ID="96">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2164_c" ID="97">
+   <tuple> <atom label="Configuration$0"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple775_c" ID="98">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple9_c" ID="99">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple54_c" ID="100">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1974_c" ID="101">
+   <tuple> <atom label="Configuration$3"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1615_c" ID="102">
+   <tuple> <atom label="Configuration$2"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1772_c" ID="103">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple1201_c" ID="104">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+<skolem label="$Tuple2157_c" ID="105">
+   <tuple> <atom label="Configuration$4"/> </tuple>
+   <types> <type ID="5"/> </types>
+</skolem>
+
+</instance>
+
+</alloy>

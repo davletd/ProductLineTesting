@@ -1,0 +1,86 @@
+package featureDiagram;
+
+require kermeta
+require "platform:/resource/ProductLineTesting/ProductLineTesting/metamodel/featureDiagram.ecore"  
+//require "semantics/fsm_Operationnal_Semantics.kmt"
+
+using kermeta::standard
+
+@aspect "true" 
+class FeatureDiagram { 
+
+	operation getMandatoryFeature(): Sequence<Feature> is do
+		result := Sequence<Feature>.new
+		result.addAll(root.getMandatoryFeature())
+	end
+
+	operation validate(): Boolean is do
+	 stdio.writeln("Feature Diagram Validation")
+	 result:=true
+	 stdio.writeln("There are "+ self.features.size().toString() + " features")
+	 
+	 stdio.writeln("Feature(s) without parent: ")
+	 self.features.select{f| f.parents.isEmpty()}.each{fe| stdio.writeln("   -"+fe.name)}
+	 
+	 stdio.writeln("Feature(s) with Children but no operator: ")
+	 self.features.select{f| (not f.children.isEmpty()) and f.operator==void  }.each{fe| stdio.writeln("   -"+fe.name)}
+	 
+	 stdio.writeln("Feature(s) with no child but with operator: ")
+	 self.features.select{f| f.children.isEmpty() and f.operator!=void }.each{fe| stdio.writeln("   -"+fe.name)}	 
+	end
+
+	/**
+	 * Print the FSM on the standard output
+	 */
+	operation print() is do
+		stdio.writeln("Feature Diagram : ")
+		if graphTypeTree== true then
+			stdio.writeln("Tree FD ")
+		else
+			stdio.writeln("Graph FD ")
+		end
+		features.each{feat|
+			if feat!= void then
+				stdio.writeln(   "   feature "+ feat.name + "   contains children with operator "+ feat.operator.toString)
+				feat.children.each{ c| 
+					if c != void then
+						stdio.writeln(   "      ->child "+ c.name)
+					else
+						stdio.writeln(   "      ->child void edge child")
+					end
+				}
+			else
+				stdio.writeln("void feature")
+			end
+			
+		}
+		stdio.writeln("Mandatory Features : ")
+		getMandatoryFeature.each{f| stdio.writeln(f.name + "; ")}
+		stdio.writeln("End Feature Diagram : ")
+	end
+} 
+
+@aspect "true" 
+class Feature{ 
+	operation getMandatoryFeature(): Sequence<Feature> is do
+		result := Sequence<Feature>.new
+		result.add( self )
+		if (operator.isInstanceOf( And) ) then
+			children.each{f|
+				if (not f.optional) then
+					result.addAll(f.getMandatoryFeature())
+				end
+			}
+		end
+	end 
+	operation getMandatoryChildren(): Sequence<Feature> is do
+		result := Sequence<Feature>.new
+		//if (operator.isInstanceOf( And) ) then
+			children.each{f|
+				if (not f.optional) then
+					result.add(f)
+				end
+			}
+		//end
+	end
+} 

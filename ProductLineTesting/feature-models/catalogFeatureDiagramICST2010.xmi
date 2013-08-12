@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureDiagram:FeatureDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureDiagram="http://www.kermeta.org/featureDiagram" xsi:schemaLocation="http://www.kermeta.org/featureDiagram ../metamodel/featureDiagram.ecore" root="//@features.0">
+  <features name="catalogStructure" children="//@features.1 //@features.2">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="productInformation" children="//@features.3" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Categories" optional="true" children="//@features.6 //@features.7 //@features.8 //@features.9" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="AssociatedAssets" optional="true" children="//@features.4 //@features.5" parents="//@features.1">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="TwoDImage" parents="//@features.3"/>
+  <features name="ThreeDImage" parents="//@features.3"/>
+  <features name="MultipleClassification" optional="true" parents="//@features.2"/>
+  <features name="MultipleLevel" optional="true" parents="//@features.2"/>
+  <features name="Description" optional="true" parents="//@features.2"/>
+  <features name="Thumbnails" optional="true" parents="//@features.2"/>
+  <constraintEdges target="//@features.4" source="//@features.9">
+    <constraint xsi:type="featureDiagram:Require"/>
+  </constraintEdges>
+</featureDiagram:FeatureDiagram>

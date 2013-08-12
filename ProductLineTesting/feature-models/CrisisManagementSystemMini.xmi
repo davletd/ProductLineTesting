@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureDiagram:FeatureDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:featureDiagram="http://www.kermeta.org/featureDiagram" xsi:schemaLocation="http://www.kermeta.org/featureDiagram ../metamodel/featureDiagram.ecore">
+  <features name="CrisisManagementSystem" selected="true" children="//@features.1 //@features.2 //@features.3">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="Communication" selected="true" children="//@features.4" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="ExternalAgencies" selected="true" children="//@features.5 //@features.6" parents="//@features.0">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="CrisisType" selected="true" children="//@features.7 //@features.8 //@features.9 //@features.10" parents="//@features.0">
+    <operator xsi:type="featureDiagram:Xor"/>
+  </features>
+  <features name="GSMGPS" selected="true" parents="//@features.1"/>
+  <features name="Medical" selected="true" children="//@features.11 //@features.12" parents="//@features.2">
+    <operator xsi:type="featureDiagram:Opt"/>
+  </features>
+  <features name="Security" selected="true" children="//@features.13 //@features.14" parents="//@features.2">
+    <operator xsi:type="featureDiagram:Opt"/>
+  </features>
+  <features name="Fire" parents="//@features.3"/>
+  <features name="Theft" parents="//@features.3"/>
+  <features name="CarAccident" parents="//@features.3"/>
+  <features name="HealthEmergency" parents="//@features.3"/>
+  <features name="Ambulance" optional="true" parents="//@features.5"/>
+  <features name="HospitalAdmit" optional="true" parents="//@features.5"/>
+  <features name="Police" optional="true" children="//@features.15" parents="//@features.6">
+    <operator xsi:type="featureDiagram:And"/>
+  </features>
+  <features name="FireStation" optional="true" parents="//@features.6"/>
+  <features name="SurveillanceCamera" optional="true" parents="//@features.13"/>
+</featureDiagram:FeatureDiagram>

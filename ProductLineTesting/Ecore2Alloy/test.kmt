@@ -1,0 +1,85 @@
+/* $Id:$ 
+ * Creation : September 8, 2009
+ * Licence  : EPL 
+ * Copyright:
+ * Authors  : 
+ *            klein
+ */
+@mainClass "Ecore2Alloy::TestFD"
+@mainOperation "main"
+
+
+package Ecore2Alloy;
+
+require kermeta
+require "platform:/resource/ProductLineTesting/ProductLineTesting/Ecore2Alloy/featureDiagram.kmt"
+require "platform:/resource/ProductLineTesting/ProductLineTesting/Ecore2Alloy/EcoreFeatureDiagramToAlloy.kmt"
+//require "http://www.eclipse.org/emf/2002/Ecore"
+
+using featureDiagram
+using kermeta::exceptions
+using kermeta::persistence
+using kermeta::standard
+using kermeta::io
+
+
+class TestFD
+{
+	operation main() : Void is do 
+		// TODO: implement 'main' operation
+		/*
+		var fd1 : FeatureDiagram init loadFD("platform:/resource/ProductLineTesting/ProductLineTesting/feature-models/catalogFeatureDiagramICST2010.xmi")
+		fd1.print() 
+		generate(fd1, "platform:/resource/ProductLineTesting/ProductLineTesting/AlloyModels/generatedCatalog.als")
+		fd1.validate()
+
+		var fd2 : FeatureDiagram init loadFD("platform:/resource/ProductLineTesting/ProductLineTesting/feature-models/transactionFeatureDiagram.xmi")
+		fd2.print() 
+		generate(fd2, "platform:/resource/ProductLineTesting/ProductLineTesting/AlloyModels/generatedTransaction.als")
+		fd2.validate()
+
+		var fd3 : FeatureDiagram init loadFD("platform:/resource/ProductLineTesting/ProductLineTesting/feature-models/CrisisManagementSystem.xmi")
+		fd3.print() 
+		generate(fd3, "platform:/resource/ProductLineTesting/ProductLineTesting/AlloyModels/CrisisManagementSystem.als")
+		fd3.validate()
+		
+		var fd4 : FeatureDiagram init loadFD("platform:/resource/ProductLineTesting/ProductLineTesting/feature-models/CrisisManagementSystemOr.xmi")
+		fd4.print() 
+		generate(fd4, "platform:/resource/ProductLineTesting/ProductLineTesting/AlloyModels/CrisisManagementSystemOr.als")
+		fd4.validate()
+
+		var fd5 : FeatureDiagram init loadFD("platform:/resource/ProductLineTesting/ProductLineTesting/feature-models/CrisisManagementSystemSmall.xmi")
+		fd5.print() 
+		generate(fd5, "platform:/resource/ProductLineTesting/ProductLineTesting/AlloyModels/CrisisManagementSystemSmall.als")
+		fd5.validate()
+		*/
+		var fd6 : FeatureDiagram init loadFD("platform:/resource/ProductLineTesting/ProductLineTesting/feature-models/VideoSurveillanceApplication.xmi")
+		fd6.print() 
+		generate(fd6, "platform:/resource/ProductLineTesting/ProductLineTesting/AlloyModels/VideoSurveillanceApplication.als")
+		fd6.validate()
+		
+	end
+	
+	operation generate(fd : FeatureDiagram, outpoutPath: String):Void is do		
+		var file : FileIO init  FileIO.new
+		var generator: EcoreFeatureDiagramToAlloy init EcoreFeatureDiagramToAlloy.new
+
+		file.writeTextFile(outpoutPath, generator.generate(fd) )			
+	end
+	
+	operation loadFD(input_FD : String) : FeatureDiagram is do
+		result ?= loadModel(input_FD, "platform:/resource/ProductLineTesting/ProductLineTesting/metamodel/featureDiagram.ecore" )
+	end
+	operation loadModel(input : String, uri: String) : Object is do
+        var resource : kermeta::persistence::EMFResource             
+   		var repository : EMFRepository init EMFRepository.new  
+   		
+   		resource ?= repository.createResource(input, uri)
+   		                                     //      "platform:/resource/kompose_projects-01/org.kermeta.kompose.ecore/model/Ecore.ecore"
+        stdio.writeln("loading " + input)
+        resource.load
+       // stdio.writeln("... after loading "+ input) 
+
+    	result := resource.one 
+	end
+}

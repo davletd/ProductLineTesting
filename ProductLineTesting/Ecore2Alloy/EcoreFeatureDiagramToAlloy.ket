@@ -1,0 +1,117 @@
+<%@ket
+package="Ecore2Alloy"
+require="platform:/resource/ProductLineTesting/ProductLineTesting/Ecore2Alloy/featureDiagram.kmt"
+using="featureDiagram"
+isAspectClass="false"
+class="EcoreFeatureDiagramToAlloy"
+ismethod="false"operation="generate"
+parameters="fd:FeatureDiagram"
+%>
+
+module <%=fd.root.name%>Model
+
+one sig ProductConfigurations
+{	
+	configurations : set Configuration
+}
+
+sig Configuration
+{
+<%var i : Integer init 1%>
+<%var mandatoryFeatures : Sequence<Feature> init fd.getMandatoryFeature()%>
+<%var hmap : Hashtable<Feature, String> init Hashtable<Feature, String>.new%>
+<%fd.features.each{f|%>
+<%hmap.put(f, "f"+i.toString)%> 
+<%if (mandatoryFeatures.contains(f)) then%>
+f<%=i.toString%>: one <%=f.name%>,
+<%else%>
+f<%=i.toString%>: lone <%=f.name%>,
+<%end%>
+<%i:= i+1%> 
+<%}%>
+}
+
+<%fd.features.each{f|%> 
+sig <%=f.name%>{}
+<%}%>
+
+fact Configuration_cardinality
+{}
+
+fact Configuration_container
+{
+	all c : Configuration | c in ProductConfigurations.configurations
+}
+
+//Constraints due to require and exclude
+<%var fact_constraint_counter : Integer init 1%>
+<%fd.constraintEdges.each{ce|%> 
+
+<%if (ce.constraint.isInstanceOf(Require)) then%>
+// <%=ce.source.name%> requires <%=ce.target.name%>
+fact Invariant_<%=fact_constraint_counter.toString%>
+{
+	all c:Configuration | #c.<%=hmap.getValue(ce.source)%>==1 implies (#c.<%=hmap.getValue(ce.target)%>=1)
+}   
+<% fact_constraint_counter := fact_constraint_counter+1 %>
+<%end%>
+<%if (ce.constraint.isInstanceOf(Mutex)) then%>
+// <%=ce.source.name%> excludes <%=ce.target.name%>
+fact Invariant_<%=fact_constraint_counter.toString%>
+{
+	all c:Configuration | #c.<%=hmap.getValue(ce.source)%>==1 implies (#c.<%=hmap.getValue(ce.target)%>=0)
+}
+<% fact_constraint_counter := fact_constraint_counter+1 %>
+<%end%>
+<%}%>
+
+// Constraints due to the Operators
+<%var operator_constraint_counter : Integer init 1%>
+<%fd.features.each{f|%> 
+<%if (f.optional == true) then%>
+// <%=f.name%> Optional condition   
+fact Invariant_Opreator_<%=operator_constraint_counter.toString%>
+{
+	all c:Configuration | #c.<%=hmap.getValue(f)%>==1 implies (<%f.parents.each{c| if (f.parents.last == c) then %> #c.<%=hmap.getValue(c)%>=1<%else%> #c.<%=hmap.getValue(c)%>=1 and <%end }%>)
+}   
+<% operator_constraint_counter := operator_constraint_counter+1 %>
+<%end%>
+<%if (f.operator != void) then%>
+<%if (f.operator.isInstanceOf(And)) then%>
+// <%=f.name%> And Operator => <%f.getMandatoryChildren().each{c|%> <%=c.name%> AND <%}%>  
+fact Invariant_Opreator_<%=operator_constraint_counter.toString%>
+{
+	<%if ( not f.getMandatoryChildren().isEmpty() ) then%>
+	all c:Configuration | #c.<%=hmap.getValue(f)%>==1 implies (<%f.getMandatoryChildren().each{c| if (f.getMandatoryChildren().last == c) then %> #c.<%=hmap.getValue(c)%>=1<%else%> #c.<%=hmap.getValue(c)%>=1 and <%end }%>)
+	<%end%>
+}   
+<% operator_constraint_counter := operator_constraint_counter+1 %>
+<%end%>
+<%if (f.operator.isInstanceOf(Xor)) then%>
+// <%=f.name%> XOR Operator => <%f.children().each{c|%> <%=c.name%> XOR <%}%>  
+fact Invariant_Opreator_<%=operator_constraint_counter.toString%>
+{
+	all c:Configuration | #c.<%=hmap.getValue(f)%>==1 implies ( (<%f.children().each{c|%> #c.<%=hmap.getValue(c)%> + <%}%> 0)==1)
+}   
+<% operator_constraint_counter := operator_constraint_counter+1 %>
+<%end%>
+<%if (f.operator.isInstanceOf(Or)) then%>
+// <%=f.name%> OR Operator => <%f.children().each{c|%> <%=c.name%> OR <%}%>  
+fact Invariant_Opreator_<%=operator_constraint_counter.toString%>
+{
+	all c:Configuration | #c.<%=hmap.getValue(f)%>==1 implies ( (<%f.children().each{c|%> #c.<%=hmap.getValue(c)%> + <%}%> 0)<=<%=f.children().size.toString()%>)
+}   
+<% operator_constraint_counter := operator_constraint_counter+1 %>
+<%end%>
+<%end%>
+<%}%>
+
+/*
+fact AllConstraints
+{
+<%from var j : Integer init 1  until j==(operator_constraint_counter-1)%><%loop%>
+	pred_<%=j.toString %> and <%j := j+1%> <%end%>
+	pred_<%=(operator_constraint_counter-1).toString %>
+
+}
+*/
